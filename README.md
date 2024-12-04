@@ -1,4 +1,4 @@
-# 🎒 Uniform Detection Software 👞 
+# 🎒 Automatic Detection Software 👞 
 
 This repository houses the source code for the Uniform Detection Software, as described in the paper ["Development of a Uniform Detection Software Using YOLOv8 Algorithm for the University of Southern Mindanao Students"](https://github.com/gisketch/complete-uniform-detection-YOLOv8/files/11717858/THESIS.MANUSCRIPT.pdf) by Joshua Tejedor. I took charge of programming and development for this project. The software employs the YOLOv8 algorithm to analyze video footage captured by a camera, enabling it to determine whether students at the University of Southern Mindanao (USM) are wearing complete or incomplete uniforms.
 
