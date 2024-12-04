@@ -43,19 +43,18 @@ temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
 
 # Load the YOLOv5 model
-@st.cache_resource
 def load_yolo_model():
-    # Define the path where you want to save the model
-    model_dir = Path.home() / '.cache' / 'torch' / 'hub'
+    # Define a fixed path for the model directory (for example, inside the Streamlit app directory)
+    model_dir = Path('/app/.cache/torch/hub')  # Change this path as needed in your environment
     model_path = model_dir / 'best.pt'
-    
+
     # If the model file doesn't exist, download it
     if not model_path.exists():
         # Create the necessary directories if they don't exist
         model_dir.mkdir(parents=True, exist_ok=True)
 
         # URL of the raw GitHub file
-        url = 'https://github.com/KYUNSSSS/ALPR/raw/main/best.pt'
+        url = 'https://github.com/KYUNSSSS/ALPR/best.pt'
         
         # Download the file from GitHub
         response = requests.get(url)
