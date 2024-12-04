@@ -32,6 +32,7 @@ import torch
 import re
 import streamlit as st
 from paddleocr import PaddleOCR
+from pathlib import Path 
 
 # Set environment variables to avoid OpenMP errors
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
