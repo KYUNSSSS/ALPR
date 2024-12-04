@@ -6,3 +6,5 @@ paddleocr
 Pillow
 numpy
 paddlepaddle
+opencv-python>=4.1.2
+imageai
