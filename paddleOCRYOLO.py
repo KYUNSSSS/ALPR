@@ -1,8 +1,33 @@
+import os
+
+# Create the necessary cache directory and trusted_list file if it doesn't exist
+cache_dir = "/home/appuser/.cache/torch/hub"
+trusted_list_path = os.path.join(cache_dir, "trusted_list")
+
+if not os.path.exists(cache_dir):
+    os.makedirs(cache_dir)
+
+if not os.path.exists(trusted_list_path):
+    with open(trusted_list_path, 'w') as f:
+        f.write('')  # Create an empty file
+
+import shutil
+
+cache_dir = "/home/appuser/.cache/torch/hub"
+if os.path.exists(cache_dir):
+    shutil.rmtree(cache_dir)  # Delete the entire hub cache
+
+# Create the necessary directories and trusted_list file again
+if not os.path.exists(cache_dir):
+    os.makedirs(cache_dir)
+
+if not os.path.exists(trusted_list_path):
+    with open(trusted_list_path, 'w') as f:
+        f.write('')
 import cv2
 import pathlib
 import torch
 import re
-import os
 import streamlit as st
 from paddleocr import PaddleOCR
 
