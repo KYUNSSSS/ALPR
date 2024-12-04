@@ -1,12 +1,12 @@
-# 🎒 Automatic License Plate Regconition
+# Automatic License Plate Regconition
 
 ## 1. Navigate to New Folder
     cd C:\Path\To\Your\Project
 ## 2. Create Virtual Environment and install package
-    
+    git clone https://github.com/KYUNSSSS/ALPR
     python -m venv vir_env
     vir_env\Scripts\activate
-    git clone https://github.com/KYUNSSSS/ALPR
+    
     pip install -r requirements.txt
 
 ## 3. RUN APP
