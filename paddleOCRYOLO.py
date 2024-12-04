@@ -1,4 +1,5 @@
 import shutil
+import os
 
 cache_dir = "/home/appuser/.cache/torch/hub"
 if os.path.exists(cache_dir):
@@ -11,7 +12,6 @@ if not os.path.exists(cache_dir):
 if not os.path.exists(trusted_list_path):
     with open(trusted_list_path, 'w') as f:
         f.write('')
-import os
 
 # Create the necessary cache directory and trusted_list file if it doesn't exist
 cache_dir = "/home/appuser/.cache/torch/hub"
