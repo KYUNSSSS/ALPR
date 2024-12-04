@@ -44,7 +44,30 @@ pathlib.PosixPath = pathlib.WindowsPath
 # Load the YOLOv5 model
 @st.cache_resource
 def load_yolo_model():
-    return torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', force_reload=False)
+    # Define the path where you want to save the model
+    model_dir = Path.home() / '.cache' / 'torch' / 'hub'
+    model_path = model_dir / 'best.pt'
+    
+    # If the model file doesn't exist, download it
+    if not model_path.exists():
+        # Create the necessary directories if they don't exist
+        model_dir.mkdir(parents=True, exist_ok=True)
+
+        # URL of the raw GitHub file
+        url = 'https://github.com/KYUNSSSS/ALPR/raw/main/best.pt'
+        
+        # Download the file from GitHub
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(model_path, 'wb') as f:
+                f.write(response.content)
+            print(f"Model downloaded and saved at {model_path}")
+        else:
+            raise Exception(f"Failed to download the model, status code: {response.status_code}")
+    
+    # Now load the model using torch
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path=str(model_path), force_reload=False)
+    return model
 
 model = load_yolo_model()
 
