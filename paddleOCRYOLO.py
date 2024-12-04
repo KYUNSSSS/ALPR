@@ -1,16 +1,3 @@
-import os
-
-# Create the necessary cache directory and trusted_list file if it doesn't exist
-cache_dir = "/home/appuser/.cache/torch/hub"
-trusted_list_path = os.path.join(cache_dir, "trusted_list")
-
-if not os.path.exists(cache_dir):
-    os.makedirs(cache_dir)
-
-if not os.path.exists(trusted_list_path):
-    with open(trusted_list_path, 'w') as f:
-        f.write('')  # Create an empty file
-
 import shutil
 
 cache_dir = "/home/appuser/.cache/torch/hub"
@@ -24,6 +11,20 @@ if not os.path.exists(cache_dir):
 if not os.path.exists(trusted_list_path):
     with open(trusted_list_path, 'w') as f:
         f.write('')
+import os
+
+# Create the necessary cache directory and trusted_list file if it doesn't exist
+cache_dir = "/home/appuser/.cache/torch/hub"
+trusted_list_path = os.path.join(cache_dir, "trusted_list")
+
+if not os.path.exists(cache_dir):
+    os.makedirs(cache_dir)
+
+if not os.path.exists(trusted_list_path):
+    with open(trusted_list_path, 'w') as f:
+        f.write('')  # Create an empty file
+
+
 import cv2
 import pathlib
 import torch
