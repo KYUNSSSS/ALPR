@@ -6,3 +6,4 @@ paddleocr
 opencv-python
 Pillow
 numpy
+paddlepaddle
