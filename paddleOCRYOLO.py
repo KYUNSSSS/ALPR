@@ -54,7 +54,7 @@ def load_yolo_model():
         model_dir.mkdir(parents=True, exist_ok=True)
 
         # URL of the raw GitHub file
-        url = 'https://github.com/KYUNSSSS/ALPR/best.pt'
+        url = 'https://github.com/KYUNSSSS/ALPR/blob/main/best.pt'
         
         # Download the file from GitHub
         response = requests.get(url)
