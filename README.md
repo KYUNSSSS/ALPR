@@ -8,6 +8,7 @@
     vir_env\Scripts\activate
     
     pip install -r requirements.txt
+    
 
 ## 3. RUN APP
     streamlit run app.py
