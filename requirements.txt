@@ -3,7 +3,6 @@ torch
 torchvision
 ultralytics
 paddleocr
-opencv-python-headless
 Pillow
 numpy
 paddlepaddle
