@@ -3,6 +3,8 @@
 ## 1. Navigate to New Folder
     cd C:\Path\To\Your\Project
 ## 2. Create Virtual Environment and install package
+Open CMD and Run as Administrator
+    
     git clone https://github.com/KYUNSSSS/ALPR
     python -m venv vir_env
     vir_env\Scripts\activate
@@ -12,8 +14,11 @@
 
 ## 3. RUN APP
     streamlit run app.py
-## 4. Deactivate virtual environment
-    deactivate (When Finish)
+
+-Copy the http link to open through browser
+-CTRL+C to stop the app 
+## 4. Deactivate virtual environment (When Finish)
+    deactivate 
 
 
 
