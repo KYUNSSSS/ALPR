@@ -1,38 +1,10 @@
-import os
-
-# Create the necessary cache directory and trusted_list file if it doesn't exist
-cache_dir = "/home/appuser/.cache/torch/hub"
-trusted_list_path = os.path.join(cache_dir, "trusted_list")
-
-if not os.path.exists(cache_dir):
-    os.makedirs(cache_dir)
-
-if not os.path.exists(trusted_list_path):
-    with open(trusted_list_path, 'w') as f:
-        f.write('')  # Create an empty file
-
-import shutil
-
-cache_dir = "/home/appuser/.cache/torch/hub"
-if os.path.exists(cache_dir):
-    shutil.rmtree(cache_dir)  # Delete the entire hub cache
-
-# Create the necessary directories and trusted_list file again
-if not os.path.exists(cache_dir):
-    os.makedirs(cache_dir)
-
-if not os.path.exists(trusted_list_path):
-    with open(trusted_list_path, 'w') as f:
-        f.write('')
-
-
 import cv2
 import pathlib
 import torch
 import re
+import os
 import streamlit as st
 from paddleocr import PaddleOCR
-from pathlib import Path 
 
 # Set environment variables to avoid OpenMP errors
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
@@ -43,31 +15,9 @@ temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
 
 # Load the YOLOv5 model
+@st.cache_resource
 def load_yolo_model():
-    # Define a fixed path for the model directory (for example, inside the Streamlit app directory)
-    model_dir = Path('/app/.cache/torch/hub')  # Change this path as needed in your environment
-    model_path = model_dir / 'best.pt'
-
-    # If the model file doesn't exist, download it
-    if not model_path.exists():
-        # Create the necessary directories if they don't exist
-        model_dir.mkdir(parents=True, exist_ok=True)
-
-        # URL of the raw GitHub file
-        url = 'https://github.com/KYUNSSSS/ALPR/blob/main/best.pt'
-        
-        # Download the file from GitHub
-        response = requests.get(url)
-        if response.status_code == 200:
-            with open(model_path, 'wb') as f:
-                f.write(response.content)
-            print(f"Model downloaded and saved at {model_path}")
-        else:
-            raise Exception(f"Failed to download the model, status code: {response.status_code}")
-    
-    # Now load the model using torch
-    model = torch.hub.load('ultralytics/yolov5', 'custom', path=str(model_path), force_reload=False)
-    return model
+    return torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', force_reload=False)
 
 model = load_yolo_model()
 
