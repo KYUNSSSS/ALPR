@@ -1,6 +1,6 @@
 # Automatic License Plate Regconition
 
-## 1. Crate New Folder Navigate to New Folder
+## 1. Create New Folder and Navigate to New Folder
 Open CMD and Run as Administrator
     
     cd C:\Path\To\Your\Project
