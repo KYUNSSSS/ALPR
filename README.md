@@ -18,7 +18,7 @@ Open CMD and Run as Administrator
 ## 3. RUN APP
     streamlit run app.py
 
-- Copy the http link to open through browser
+- Copy the http link generated to open through browser
 - CTRL+C to stop the app 
 ## 4. Deactivate virtual environment (When Finish)
     deactivate 
