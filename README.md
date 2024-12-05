@@ -15,8 +15,10 @@ Open CMD and Run as Administrator
     pip install -r requirements.txt
     
 
-## 3. RUN APP
+## 3. RUN APP (For Streamlit)
     streamlit run paddleOCRYOLO.py
+## 3.1 RUN APP (For Flask)
+    python app.py
 
 - Copy the http link generated to open through browser
 - CTRL+C to stop the app 
