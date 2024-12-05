@@ -1,6 +1,6 @@
 # Automatic License Plate Regconition
 
-## 1. Navigate to New Folder
+## 1. Crate New Folder Navigate to New Folder
     cd C:\Path\To\Your\Project
 ## 2. Create Virtual Environment and install package
 Open CMD and Run as Administrator
