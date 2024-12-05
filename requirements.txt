@@ -6,6 +6,4 @@ paddleocr
 Pillow
 numpy
 paddlepaddle
-opencv-python-headless
-imageai
-pathlib
+opencv-python
