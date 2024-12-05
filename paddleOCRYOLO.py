@@ -89,14 +89,14 @@ if uploaded_file is not None:
     with open("uploaded_image.jpg", "wb") as f:
         f.write(uploaded_file.getbuffer())
 
-    st.image("uploaded_image.jpg", caption="Uploaded Image", use_column_width=True)
+    st.image("uploaded_image.jpg", caption="Uploaded Image", use_container_width=True)
     st.write("Processing...")
 
     # Perform detection and recognition
     detected_image_path, detected_texts = detect_plate_and_recognize_text("uploaded_image.jpg")
 
     # Display results
-    st.image(detected_image_path, caption="Processed Image with Detected Plates", use_column_width=True)
+    st.image(detected_image_path, caption="Processed Image with Detected Plates", use_container_width=True)
     st.write("**Detected Texts:**")
     for text in detected_texts:
         st.write(f"- {text}")
