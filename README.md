@@ -16,7 +16,7 @@ Open CMD and Run as Administrator
     
 
 ## 3. RUN APP
-    streamlit run app.py
+    streamlit run paddleOCRYOLO.py
 
 - Copy the http link generated to open through browser
 - CTRL+C to stop the app 
