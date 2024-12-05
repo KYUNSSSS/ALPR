@@ -23,7 +23,8 @@ Open CMD and Run as Administrator
 ## 4. Deactivate virtual environment (When Finish)
     deactivate 
 
-
+## 5. To Activate Again
+     vir_env\Scripts\activate
 
 
 
